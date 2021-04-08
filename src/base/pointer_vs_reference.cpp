@@ -3,6 +3,20 @@
 using std::cout;
 using std::endl;
 
+template<class T> class Test {
+public:
+    explicit Test(T v) {
+        value = v;
+    }
+
+    T& getValue() {
+        return value;
+    }
+
+private:
+    T value;
+};
+
 // Passing by reference without pointers
 void swap(int& p1, int& p2) {
     int temp;
@@ -33,4 +47,19 @@ int main() {
     int f = 5;
     int& g = f;
     cout << g << endl;
+
+    /**
+     * This is difference between pointer and reference!
+     * pointer i = &<value>
+     * reference j = <value>
+     */
+    int h = 1;
+    int* i = &h;
+    int& j = h;
+
+    Test<int> test(1);
+    int k = test.getValue();
+    int& l = test.getValue();
+    cout << k << endl;
+    cout << l << endl;
 }
