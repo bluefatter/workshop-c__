@@ -1,6 +1,7 @@
-#ifndef WORKSHOP_C___STDUENT_INFO_H
-#define WORKSHOP_C___STDUENT_INFO_H
+#ifndef WORKSHOP_C___STUDENT_INFO_H
+#define WORKSHOP_C___STUDENT_INFO_H
 #include <iostream>
+#include <vector>
 
 class StudentInfo {
 public:
@@ -9,11 +10,14 @@ public:
      * calling the grade function will not change any of the data members of the Student_info object
      */
     StudentInfo();
-    StudentInfo(std::istream&);
+//    StudentInfo(std::istream&);
+    ~StudentInfo() {
+        std::cout << "exiting StudentInfo" << std::endl;
+    }
 
-    double grade() const;
-    std::istream& read(std::istream&);
-    std::string name() const {
+//    double grade() const;
+//    std::istream& read(std::istream&);
+    std::string getName() const {
         return name;
     }
 
@@ -23,4 +27,4 @@ private:
     std::vector<double> homework;
 };
 
-#endif //WORKSHOP_C___STDUENT_INFO_H
+#endif //WORKSHOP_C___STUDENT_INFO_H
